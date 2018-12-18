@@ -1,0 +1,24 @@
+clear all;
+clc;
+
+for i=1:20
+i = num2str(i);
+a = imread(strcat('00',i,'.bmp'));
+
+[cb fvector] = KPE(a);
+temp = {cb,fvector};
+save(strcat('C:\Documents and Settings\Neesha\My Documents\Downloads\programs\programs\img_kpe',i),'temp');
+
+[cb fvector] = LBG(a);
+temp = {cb,fvector};
+save(strcat('C:\Documents and Settings\Neesha\My Documents\Downloads\programs\programs\img_lbg',i),'temp');
+
+[cb fvector] = KPE(a);
+temp = {cb,fvector};
+save(strcat('C:\Documents and Settings\Neesha\My Documents\Downloads\programs\programs\img_kfcg',i),'temp');
+
+[cb fvector] = KPE(a);
+temp = {cb,fvector};
+save(strcat('/Users/Neha/Desktop/programs/img_kmcg',i),'temp');
+
+end
